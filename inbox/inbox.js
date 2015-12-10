@@ -1,11 +1,18 @@
 angular.module('workmanagerBPMApp')
-.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
  
     $stateProvider
-        .state('inbox', {
-            url:'/inbox',
-            templateUrl: '/inbox/inbox.html',
-            controller: 'InboxController'
-        }) 
+        .state('inbox',{
+            parent: 'site',
+            url: '/inbox',
+            views: {
+                    'content@':{
+                        templateUrl: 'inbox/inbox.html',
+                        controller: 'InboxController',
+                        controllerAs: 'inboxController'
+                    }
+                }
+        })
+    
 }]);

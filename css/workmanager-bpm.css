@@ -5,3 +5,11 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+.myGrid {
+    width: 86%;
+    height: 350px;
+    align-items: center;
+  }
+.inbox{
+    align-content: center;
+}

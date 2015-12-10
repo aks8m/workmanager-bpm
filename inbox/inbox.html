@@ -1,1 +1,11 @@
-<h1> NOW IN THE INBOX</h1>
+
+<div align="center" ng-controller="InboxGridController as inboxGridController" class="inbox">
+
+    <div ui-grid="{ data: myData }" class="myGrid"></div>
+    
+    
+    <h1>{{inboxController.parentoutput}}</h1>
+    <h2>{{inboxGridController.output}}</h2>
+
+</div>
+
