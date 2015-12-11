@@ -7,7 +7,9 @@ angular.module('workmanagerBPMApp').config(['$stateProvider', '$urlRouterProvide
             views: {
                 'navbar@':{
                         templateUrl: 'navbar/navbar.html',
-                        controller: 'NavbarController'
+                        controller: 'NavbarController',
+                        controllerAs: 'navbarController'
+                        
                 }
             }
         })    

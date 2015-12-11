@@ -9,7 +9,8 @@ angular.module('workmanagerBPMApp')
             views: {
                     'content@':{
                         templateUrl: 'home/home.html',
-                        controller: 'HomeController'
+                        controller: 'HomeController',
+                        controllerAs: 'homecontroller'
                     }
                 }
         })
