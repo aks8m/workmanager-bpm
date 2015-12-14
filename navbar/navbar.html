@@ -12,25 +12,18 @@
         <ul class="nav navbar-nav navbar-right">
             <li>
                 <a ui-sref="home">
-                    <span class="glyphicon glyphicon-home"></span>
-                    Home
+                    <span class="glyphicon glyphicon-home"></span> Home
                 </a>
             </li>
             <li>
-            <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                                <span>
-                                    <span class="glyphicon glyphicon-inbox"></span>
-                                    <span class="hidden-tablet" translate="global.menu.admin.main">Inbox</span>
-                                    <b class="caret"></b>
-                                </span>
-            </a>
-                <ul class="dropdown-menu">
-                    <li ui-sref-active="active"><a ui-sref="inbox({role: 'terminologist'})">Terminologist</a></li>
-                    <li ui-sref-active="active"><a ui-sref="inbox({role: 'technical_specialist'})">Technical Specialist</a></li>
-                    <li ui-sref-active="active"><a ui-sref="inbox({role: 'project_controller'})">Project Controller</a></li>
-                    <li ui-sref-active="active"><a ui-sref="inbox({role: 'terminology_sme'})">Terminology SME</a></li>
-                    <li ui-sref-active="active"><a ui-sref="inbox({role: 'information_coordinator'})">Information Coordinator</a></li>
-                </ul>
+                <a ng-click="navbarController.openRoleModal()" ui-sref="home">
+                    <span class="glyphicon glyphicon-flash"></span> Role
+                </a>
+            </li>
+            <li>
+                <a ui-sref="inbox">
+                    <span class="glyphicon glyphicon-inbox"></span> Inbox
+                </a>
             </li>
         </ul>
     </div>
