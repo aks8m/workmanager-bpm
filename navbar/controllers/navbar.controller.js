@@ -8,13 +8,6 @@ angular.module('workmanagerBPMApp')
             vm.role = 'Role';
 
 
-            vm.openRoleModal = function () {
-
-                $uibModal.open({
-                        animation: true,
-                        templateUrl: 'modal/modal.html',
-                        controller: 'ModalController',
-                        controllerAs: 'modalController'
-                })};
+            
 
             });

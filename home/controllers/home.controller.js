@@ -5,4 +5,11 @@ angular.module('workmanagerBPMApp')
         var vm = this;
 
 
+        $uibModal.open({
+            animation: true,
+            templateUrl: 'modal/modal.html',
+            controller: 'ModalController',
+            controllerAs: 'modalController'
+        });
+    
     });
