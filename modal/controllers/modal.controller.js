@@ -5,9 +5,11 @@ angular.module('workmanagerBPMApp')
 
         var vm = this;
         var role;
+        var userNameAndRole = {};
 
         vm.name = '';
         vm.ddTitle = "Select A Role ";
+
 
         vm.roleSelected = function (selection) {
 
@@ -16,10 +18,14 @@ angular.module('workmanagerBPMApp')
 
         };
 
-
         vm.ok = function () {
-            console.log(vm.name + ' selected -> ' + role);
-            $uibModalInstance.close();
+
+            userNameAndRole = {
+                userName: vm.name,
+                userRole: role
+            };
+            $uibModalInstance.close(userNameAndRole);
+
         };
 
         vm.cancel = function () {

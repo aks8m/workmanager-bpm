@@ -1,0 +1,26 @@
+[
+	{
+		"Assignment": "Lab Etiology 1",
+		"Created By": "Technical Specialist",
+		"Toatl Records In Assignment": 245,
+		"# of Records Validated": 0,
+		"Status": "Technical Evaluation",
+		"Billable Hours": 0
+	},
+	{
+		"Assignment": "Lab Etiology 2",
+		"Created By": "Technical Specialist",
+		"Toatl Records In Assignment": 245,
+		"# of Records Validated": 0,
+		"Status": "Validation",
+		"Billable Hours": 10
+	},
+	{
+		"Assignment": "Lab Etiology 3",
+		"Created By": "Technical Specialist",
+		"Toatl Records In Assignment": 245,
+		"# of Records Validated": 0,
+		"Status": "Final Validation",
+		"Billable Hours": 40
+	}
+]
