@@ -6,20 +6,12 @@ angular.module('workmanagerBPMApp').controller('InboxController', function (User
     vm.role = User.userRole;
 
 
-    Inbox.get().then(function (response) {
-        var foo = response.data.contentItem;
-        console.log(foo);
-    });
-    vm.myData = Inbox.content;
-
-    console.log(Inbox.content);
-
-    /*
-        vm.myData = [{
-            name: "Andrew",
-            role: "Cool Kid"
-        }];
-    */
-
-
+    Inbox.getData()
+        .success(function (data) {
+            vm.myData = data;
+        })
+        .error(function (error) {
+            console.log('Unable to load inbox data: ' + error.message);
+        });
+    
 });
