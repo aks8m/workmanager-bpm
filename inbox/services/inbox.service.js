@@ -1,12 +1,22 @@
 'use strict';
 
 angular.module('workmanagerBPMApp')
-    .factory('Inbox', function ($http) {
+    .factory('Inbox', function ($http, localStorageService) {
 
         var dataFactory = {};
 
-        dataFactory.getData = function () {
-            return $http.get('scripts/data/terminologist_inbox.json');
+        dataFactory.getData = function (userID) {
+
+            var returnData = [];
+
+            localStorageService.get('assignments').forEach(function (item) {
+
+                if (item.userID === 'u1') {
+                    returnData.push(item);
+                }
+
+            });
+            return returnData;
         };
 
         return dataFactory;

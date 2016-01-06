@@ -1,9 +1,3 @@
 'use strict';
 
-var myApp = angular.module('workmanagerBPMApp', ['ui.router', 'ui.grid', 'ui.bootstrap', 'LocalStorageModule']);
-
-myApp.controller('workManagerBPMAppController', function () {
-
-
-
-});
+var myApp = angular.module('workmanagerBPMApp', ['ui.router', 'ui.grid', 'ui.bootstrap', 'LocalStorageModule', 'ui.grid.edit']);

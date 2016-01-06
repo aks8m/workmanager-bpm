@@ -1,8 +1,15 @@
-'use strict';
+'use striict';
 
 angular.module('workmanagerBPMApp')
-    .factory('User', function (localStorageService) {
-
-        return localStorageService.get('userObject');
-
-    });
+    .factory('User', function(localStorageService){
+    
+    var datafactory = {};
+    
+    datafactory.getUser = function() {
+        
+        return localStorageService.get('users');
+    }
+    
+    return datafactory;
+    
+});
