@@ -1,13 +1,10 @@
-body {
-  padding-top: 50px;
-}
 .starter-template {
   padding: 40px 15px;
   text-align: center;
 }
 .myGrid {
-    width: 1200px;
-    height: 400px;
+    width: 100%;
+    height: auto;
     align-items: center;
   }
 .inbox{

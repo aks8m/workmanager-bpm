@@ -15,7 +15,7 @@
 },
 {
 	"id": "002",
-	"number": 1001,
+	"number": 1002,
 	"assignment": "Lab Etiology 2",
 	"domain": "Etiology",
 	"createdBy": "Technical Specialist",
@@ -30,7 +30,7 @@
 },
 {
 	"id": "003",
-	"number": 1001,
+	"number": 1003,
 	"assignment": "Lab Etiology 3",
 	"domain": "Etiology",
 	"createdBy": "Technical Specialist",
@@ -45,7 +45,7 @@
 },
 {
 	"id": "004",
-	"number": 1001,
+	"number": 1004,
 	"assignment": "Lab Etiology 4",
 	"domain": "Etiology",
 	"createdBy": "Technical Specialist",
