@@ -13,6 +13,9 @@
         <button uib-tooltip="Report" class="btn btn-default" ng-click="inboxController.report()" type="button">
             <span class="glyphicon glyphicon-flag"></span>
         </button>
+        <button uib-tooltip="Refresh" class="btn btn-default" ng-click="inboxController.refreshInbox()" type="button">
+            <span class="glyphicon glyphicon-refresh"></span>
+        </button>
 
     </div>
 
@@ -24,8 +27,8 @@
                 <button uib-tooltip="Search" class="btn btn-default" ng-click="inboxController.filter()" type="button">
             <span class="glyphicon glyphicon-search"></span>
             </button>
-            <button uib-tooltip="Refresh" class="btn btn-default" ng-click="inboxController.resetFilter()" type="button">
-                <span class="glyphicon glyphicon-refresh"></span>
+            <button uib-tooltip="Clear" class="btn btn-default" ng-click="inboxController.resetFilter()" type="button">
+                <span class="glyphicon glyphicon-remove"></span>
             </button>
             </span>
         </div>

@@ -112,6 +112,8 @@ angular.module('workmanagerBPMApp').controller('InboxController', function (Inbo
     
     vm.report = function(){};
     
+    vm.refreshInbox = function(){};
+    
 
 
 });
