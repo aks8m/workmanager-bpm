@@ -12,10 +12,6 @@ angular.module('workmanagerBPMApp')
                         controller: 'InboxController',
                         controllerAs: 'inboxController'
                     }
-                },
-            params:{
-                role: null
-            }
-        })
+                }})
     
 }]);

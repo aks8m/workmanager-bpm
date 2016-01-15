@@ -3,11 +3,14 @@
 angular.module('workmanagerBPMApp').controller('InboxController', function (Inbox, localStorageService, User, $scope) {
     var vm = this;
     var columnArray = ['number', 'assignment', 'domain', 'createdBy', 'dateAssigned', 'status', 'details'];
+    var assignmentData = Inbox.getData(User.getUser().id);
+    
 
 
     vm.gridOptions = {
+        enableColumnMenus: false,
         enableRowSelection: true,
-        enableSorting: true,
+        enableSorting: false,
         noUnselect: true,
         showGridFooter: false,
         multiSelect: false,
@@ -22,28 +25,23 @@ angular.module('workmanagerBPMApp').controller('InboxController', function (Inbo
         },
         columnDefs: [
             {
-                name: 'Assignment Number',
+                name: 'Assignment #',
                 field: 'number',
                 enableCellEdit: false,
-                width: "**"
             },
             {
                 name: 'Assignment',
                 field: 'assignment',
-                enableCellEdit: false,
-                width: "**"
             },
             {
                 name: 'Domain',
                 field: 'domain',
                 enableCellEdit: false,
-                width: "**"
             },
             {
                 name: 'Created By',
                 field: 'createdBy',
                 enableCellEdit: false,
-                width: "**"
             },
             {
                 name: 'Date',
@@ -51,37 +49,32 @@ angular.module('workmanagerBPMApp').controller('InboxController', function (Inbo
                 enableCellEdit: false
             },
             {
-                name: 'Number of Terms',
+                name: 'Term #',
                 field: 'termCount',
                 enableCellEdit: false,
-                width: "**"
             },
             {
-                name: 'Terms Validated',
+                name: 'Validated #',
                 field: 'validatedCount',
                 enableCellEdit: false,
-                width: "**"
             },
             {
                 name: 'Status',
                 field: 'status',
                 enableCellEdit: false,
-                width: "**"
             },
             {
                 name: 'Billable Hours',
                 field: 'billableHours',
                 enableCellEdit: false,
-                width: "**"
             },
             {
                 name: 'Details',
                 field: 'details',
                 enableCellEdit: false,
-                width: "**"
             }
         ],
-        data: Inbox.getData(User.getUser().id)
+        data: assignmentData
     };
 
     vm.singleFilter = function (renderableRows) {
@@ -110,7 +103,15 @@ angular.module('workmanagerBPMApp').controller('InboxController', function (Inbo
         vm.filter();
 
     };
-
+    
+    vm.validate = function(){};
+    
+    vm.edit = function(){};
+    
+    vm.export = function(){};
+    
+    vm.report = function(){};
+    
 
 
 });
