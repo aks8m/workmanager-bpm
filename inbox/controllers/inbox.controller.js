@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('workmanagerBPMApp').controller('InboxController', function (Inbox, localStorageService, User, $scope) {
+angular.module('workmanagerBPMApp').controller('InboxController', function (Inbox, localStorageService, User, $scope, $uibModal) {
     var vm = this;
     var columnArray = ['number', 'assignment', 'domain', 'createdBy', 'dateAssigned', 'status', 'details'];
     var assignmentData = Inbox.getData(User.getUser().id);
-    
+    var selectedAssignment = {};
 
 
     vm.gridOptions = {
@@ -16,11 +16,27 @@ angular.module('workmanagerBPMApp').controller('InboxController', function (Inbo
         multiSelect: false,
         enableFullRowSelection: true,
         enableRowHeaderSelection: false,
+        xporterPdfDefaultStyle: {
+            fontSize: 9
+        },
+        exporterPdfTableStyle: {
+            margin: [30, 30, 30, 30]
+        },
+        exporterPdfTableHeaderStyle: {
+            fontSize: 10,
+            bold: true,
+            italics: true,
+            color: 'red'
+        },
+        exporterPdfOrientation: 'portrait',
+        exporterPdfPageSize: 'LETTER',
+        exporterPdfMaxGridWidth: 500,
         onRegisterApi: function (gridApi) {
             vm.gridApi = gridApi;
             vm.gridApi.grid.registerRowsProcessor(vm.singleFilter, 200);
             vm.gridApi.selection.on.rowSelectionChanged($scope, function (row) {
-                vm.selectedAssignment = row.entity;
+                selectedAssignment = row.entity;
+                console.log(selectedAssignment);
             });
         },
         columnDefs: [
@@ -103,17 +119,35 @@ angular.module('workmanagerBPMApp').controller('InboxController', function (Inbo
         vm.filter();
 
     };
-    
-    vm.validate = function(){};
-    
-    vm.edit = function(){};
-    
-    vm.export = function(){};
-    
-    vm.report = function(){};
-    
-    vm.refreshInbox = function(){};
-    
+
+
+    vm.validate = function () {};
+
+    vm.edit = function () {};
+
+    vm.export = function () {
+
+    };
+
+    vm.report = function () {
+
+        var modalInstance = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            templateUrl: '/inbox/views/report.modal.html',
+            controller: 'ReportModalController',
+            controllerAs: 'reportModalController',
+            size: 'lg',
+            resolve: {
+                selectedRow: selectedAssignment
+            }
+        });
+    };
+
+    vm.refreshInbox = function () {
+
+        assignmentData = Inbox.getData(User.getUser().id);
+        vm.gridApi.grid.refresh();
+    }
 
 
 });

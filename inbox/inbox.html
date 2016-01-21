@@ -1,7 +1,7 @@
 <div class="row">
 
     <div class="col-lg-6">
-        <button uib-tooltip="Validate" class="btn btn-default" ng-click="inboxController.validate()" type="button">
+        <button uib-tooltip="Validate" class="btn btn-default" ui-sref="validation" ng-click="inboxController.validate()" type="button">
             <span class="glyphicon glyphicon-eye-open"></span>
         </button>
         <button uib-tooltip="Edit" class="btn btn-default" ng-click="inboxController.edit()" type="button">
@@ -39,6 +39,6 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <div ui-grid="inboxController.gridOptions" ui-grid-selection class="myGrid"></div>
+        <div ui-grid="inboxController.gridOptions" ui-grid-selection ui-grid-exporter class="myGrid"></div>
     </div>
 </div>
