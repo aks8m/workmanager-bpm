@@ -9,7 +9,7 @@
         "validatedCount": 0,
         "status": "Technical Evaluation",
         "billableHours": 0,
-        "details": "Space for comments asdfasdf asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
+        "details": "Space for comments asdfasdf",
         "userID": "u1"
 
 },
@@ -45,11 +45,11 @@
 },
     {
         "id": "004",
-        "number": 1003,
+        "number": 1004,
         "assignment": "Lab Etiology 4",
         "domain": "Etiology",
         "createdBy": "Technical Specialist",
-        "dateAssigned": "2/12/13",
+        "dateAssigned": "5/12/13",
         "termCount": 10,
         "validatedCount": 0,
         "status": "Final Validation",
@@ -60,7 +60,7 @@
 },
     {
         "id": "005",
-        "number": 1004,
+        "number": 1005,
         "assignment": "Lab Etiology 4",
         "domain": "Etiology",
         "createdBy": "Technical Specialist",

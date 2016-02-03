@@ -4,7 +4,9 @@ angular.module('workmanagerBPMApp').controller('InboxController', function (Inbo
     var vm = this;
     var columnArray = ['number', 'assignment', 'domain', 'createdBy', 'dateAssigned', 'status', 'details'];
     var assignmentData = Inbox.getData(User.getUser().id);
-    var selectedAssignment = {};
+    var selectedAssignment = null;
+    vm.isDisabled = false;
+    vm.isRowSelected = false;
 
 
     vm.gridOptions = {
@@ -28,7 +30,7 @@ angular.module('workmanagerBPMApp').controller('InboxController', function (Inbo
             italics: true,
             color: 'red'
         },
-        exporterPdfOrientation: 'portrait',
+        exporterPdfOrientation: 'landscape',
         exporterPdfPageSize: 'LETTER',
         exporterPdfMaxGridWidth: 500,
         onRegisterApi: function (gridApi) {
@@ -36,7 +38,7 @@ angular.module('workmanagerBPMApp').controller('InboxController', function (Inbo
             vm.gridApi.grid.registerRowsProcessor(vm.singleFilter, 200);
             vm.gridApi.selection.on.rowSelectionChanged($scope, function (row) {
                 selectedAssignment = row.entity;
-                console.log(selectedAssignment);
+                vm.isRowSelected = true;
             });
         },
         columnDefs: [
@@ -123,14 +125,18 @@ angular.module('workmanagerBPMApp').controller('InboxController', function (Inbo
 
     vm.validate = function () {};
 
-    vm.edit = function () {};
+    vm.edit = function () {
+        vm.isDisabled = !vm.isDisabled;
+    };
 
     vm.export = function () {
-
+        vm.gridApi.exporter.pdfExport('all', 'all');
     };
 
     vm.report = function () {
 
+
+        console.log(!selectedAssignment === null);
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: '/inbox/views/report.modal.html',
@@ -141,6 +147,8 @@ angular.module('workmanagerBPMApp').controller('InboxController', function (Inbo
                 selectedRow: selectedAssignment
             }
         });
+
+
     };
 
     vm.refreshInbox = function () {

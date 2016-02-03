@@ -1,24 +1,23 @@
 <div class="row">
 
     <div class="col-lg-6">
-        <button uib-tooltip="Validate" class="btn btn-default" ui-sref="validation" ng-click="inboxController.validate()" type="button">
+        <button uib-tooltip="Validate" class="btn btn-default" ui-sref="validation" ng-disabled="inboxController.isDisabled" ng-click="inboxController.validate()" type="button">
             <span class="glyphicon glyphicon-eye-open"></span>
         </button>
-        <button uib-tooltip="Edit" class="btn btn-default" ng-click="inboxController.edit()" type="button">
-            <span class="glyphicon glyphicon-pencil"></span>
+        <button class="btn btn-default" ng-click="inboxController.edit()" ng-switch on="inboxController.isDisabled" type="button">
+            <span uib-tooltip="Edit" class="glyphicon glyphicon-pencil" ng-switch-when="false"></span>
+            <span uib-tooltip="Save" class="glyphicon glyphicon-floppy-disk" ng-switch-when="true"></span>
         </button>
-        <button uib-tooltip="Export" class="btn btn-default" ng-click="inboxController.export()" type="button">
+        <button uib-tooltip="Export" class="btn btn-default" ng-disabled="inboxController.isDisabled" ng-click="inboxController.export()" type="button">
             <span class="glyphicon glyphicon-file"></span>
         </button>
-        <button uib-tooltip="Report" class="btn btn-default" ng-click="inboxController.report()" type="button">
+        <button uib-tooltip="Report" class="btn btn-default" ng-disabled="inboxController.isDisabled || !inboxController.isRowSelected" ng-click="inboxController.report()" type="button">
             <span class="glyphicon glyphicon-flag"></span>
         </button>
-        <button uib-tooltip="Refresh" class="btn btn-default" ng-click="inboxController.refreshInbox()" type="button">
+        <button uib-tooltip="Refresh" class="btn btn-default" ng-disabled="inboxController.isDisabled" ng-click="inboxController.refreshInbox()" type="button">
             <span class="glyphicon glyphicon-refresh"></span>
         </button>
-
     </div>
-
 
     <div class="col-lg-6">
         <div class="input-group">
